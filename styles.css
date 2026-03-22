@@ -166,9 +166,17 @@ img {
     align-items: center;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
 .nav-logo img {
     height: 50px;
+    width: auto;
     transition: var(--transition);
+    object-fit: contain;
 }
 
 .navbar.scrolled .nav-logo img {
