@@ -45,16 +45,13 @@ a, button, input, select, textarea {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.7;
-    overflow-x: hidden;
-    background-color: var(--bg-white);
+html {
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,6 +79,7 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    width: 100%;
 }
 
 /* ===== Preloader ===== */
@@ -252,9 +250,10 @@ img {
     min-height: 100vh;
     background: var(--gradient-primary);
     position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    width: 100%;
 }
 
 .hero-bg-shapes {
@@ -315,6 +314,7 @@ img {
     align-items: center;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .hero-badge {
@@ -534,6 +534,8 @@ img {
 /* ===== Section Styles ===== */
 section {
     padding: 100px 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .section-tag {
@@ -1604,11 +1606,15 @@ section {
     
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
+    }
+    
+    .service-card {
+        margin-bottom: 0;
     }
     
     .service-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
     
     .why-grid {
@@ -1618,15 +1624,16 @@ section {
     
     .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
     
     .pricing-card {
-        padding: 32px 24px;
+        padding: 28px 20px;
+        margin-bottom: 0;
     }
     
     .pricing-price .amount {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .testimonials-grid {
@@ -1649,27 +1656,41 @@ section {
     }
     
     .section-title {
-        font-size: 1.9rem;
+        font-size: 1.75rem;
         line-height: 1.3;
         margin-bottom: 20px;
     }
     
     .section-description {
-        font-size: 1.05rem;
-        line-height: 1.7;
+        font-size: 1rem;
+        line-height: 1.6;
     }
     
     section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+    
+    .about-image {
+        max-width: 100%;
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .hero-description {
+        text-align: center;
+        max-width: 100%;
     }
     
     .hero-badge {
         font-size: 0.85rem;
         padding: 6px 16px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
     }
     
     .container {
@@ -1682,6 +1703,26 @@ section {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+    
+    .hero-container {
+        padding: 80px 20px 60px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
@@ -1813,20 +1854,41 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        min-height: auto;
+        padding: 70px 0 50px;
+    }
+    
+    .hero-container {
+        padding: 70px 16px 50px;
+    }
+    
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.2;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
     
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.6;
-        margin-bottom: 30px;
+        margin-bottom: 24px;
     }
     
     .section-header {
-        margin-bottom: 40px;
+        margin-bottom: 32px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    section {
+        padding: 40px 0;
     }
 
     .hero-buttons {
@@ -1892,13 +1954,21 @@ section {
     }
     
     .service-card {
-        padding: 28px 20px;
+        padding: 24px 16px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-card p {
+        font-size: 0.95rem;
     }
     
     .service-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem;
     }
     
     .why-card {
@@ -1912,28 +1982,41 @@ section {
     }
     
     .pricing-card {
-        padding: 32px 20px;
+        padding: 24px 16px;
     }
     
     .pricing-header h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+    
+    .pricing-header p {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-price .amount {
+        font-size: 2rem;
     }
     
     .pricing-features li {
-        font-size: 0.95rem;
-        padding: 10px 0;
+        font-size: 0.9rem;
+        padding: 8px 0;
     }
     
     .testimonial-card {
-        padding: 28px 20px;
+        padding: 24px 16px;
     }
     
     .testimonial-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
     
     .author-name {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .author-title {
+        font-size: 0.85rem;
     }
 }
 
